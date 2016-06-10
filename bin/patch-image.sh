@@ -205,6 +205,7 @@ function check_oldfile_full_path() {
 temp_dir="$HOME/.f5-image-prep/tmp"
 userdata_file='none'
 firstboot_file=false
+qcow_device=/dev/nbd0
 
 function badusage {
     echo "usage: patch-image -s startup_pkg -f -u userdata_file <image.qcow2>"
@@ -309,10 +310,14 @@ fi
 check_oldfile_full_path
 
 sleep 2
-qemu-nbd -d /dev/nbd0
+qemu-nbd -d $qcow_device
 sleep 2
-qemu-nbd --connect=/dev/nbd0 $temp_dir/$newfile
+qemu-nbd --connect=$qcow_device $temp_dir/$newfile
 sleep 2
+partprobe $qcow_device
+for part in ${qcow_device}*; do
+  pvscan --cache $part
+done
 pvscan
 sleep 2
 echo "The following command may cause 'Can't deactivate' messages."
@@ -345,6 +350,6 @@ fi
 sleep 2
 vgchange -an
 sleep 2
-qemu-nbd -d /dev/nbd0
+qemu-nbd -d $qcow_device
 echo "Patched image located at $temp_dir/$newfile"
 set +x
