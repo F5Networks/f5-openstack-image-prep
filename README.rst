@@ -33,7 +33,7 @@ To install the project requirements:
 Because the ``bin/patch-image.sh`` script manipulates the host kernel, it will only run successfully in environments that permit kernel manipulation (e.g., ``lsmod``, and ``modprobe nbd``).  THIS PRECLUDES THE USE OF (MOST) CONTAINERS!!
 The script also needs to ``mount`` and ``umount`` filesystems (using the ``nbd`` drivers) so rights to devices/mount points, etc., are  necessary.
 
-Currently, Ubuntu 14.04 has been verified to support the patch scrip; a patch for 16.04 is under review. 
+Currently, Ubuntu 14.04 has been verified to support the patch script; a patch for 16.04 is under review. 
 
 Installation
 ~~~~~~~~~~~~
