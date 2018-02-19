@@ -8,7 +8,7 @@ Introduction
 
 The standard F5 BIG-IP Virtual Edition (VE) images available from f5.com must be 'patched' in order to be compatible with OpenStack. This repository's contents make it possible to patch and upload F5 VE images into OpenStack Glance.
 
-The easiest way to patch a VE image for use in OpenStack is to use the F5 Heat template 'patch_upload_ve_image.yaml'. Please see the `F5 Heat User Guide <http://f5-openstack-heat.readthedocs.io/en/latest/map_heat-user-guide.html>`_ for instructions.
+The easiest way to patch a VE image for use in OpenStack is to use the F5 Heat template 'patch_upload_ve_image.yaml'. Please see the `F5 Heat User Guide <http://clouddocs.f5.com/products/templates/openstack-heat/master/f5_supported/f5-bigip-ve_image-patch-upload.html>`_ for instructions.
 
 For Developers
 --------------
@@ -80,7 +80,7 @@ Contributor License Agreement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Individuals or business entities who contribute to this project must have
 completed and submitted the `F5 Contributor License Agreement
-<http://f5-openstack-docs.readthedocs.org/en/latest/cla_landing.html>`__
+<http://clouddocs.f5.com/cloud/openstack/v1/support/cla_landing.html>`__
 to Openstack_CLA@f5.com prior to their code submission being included in this
 project.
 
